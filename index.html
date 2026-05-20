@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Private</title>
+    <link rel="icon" href="fav.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <main class="page">
+        <section class="card" id="login-box">
+            <div class="header">
+                <h1 class="title">Вход</h1>
+            
+                <a href="encrypt.html" class="header-btn" title="Админ-панель">
+                    <img src="src/settings.svg" alt="settings">
+                </a>
+            </div>
+
+            <input
+                id="login"
+                class="input"
+                placeholder="Логин"
+                autocomplete="username"
+            >
+
+            <input
+                id="password"
+                class="input"
+                placeholder="Пароль"
+                autocomplete="current-password"
+            >
+
+            <button
+                id="submit"
+                class="button"
+                onclick="App.login()"
+            >
+                Войти
+            </button>
+
+            <div id="error"></div>
+        </section>
+
+        <section
+            class="content card"
+            id="content"
+        >
+            <div class="header">
+                <h1 class="title">Вернуться на главную</h1>
+            
+                <a href="index.html" class="header-btn" title="На главную">
+                    <img src="src/arrow-left.svg" alt="back">
+                </a>
+            </div>
+
+            <img
+                id="image"
+                alt=""
+            >
+
+            <button id="text-copy" class="button" onclick="navigator.clipboard.writeText(window.text_config);">
+                Скопировать конфиг в буфер
+            </button>
+        </section>
+    </main>
+
+    <script src="scripts/crypto-utils.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>

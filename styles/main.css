@@ -1,0 +1,255 @@
+:root {
+    --bg: #f6f8fc;
+    --card: rgba(255, 255, 255, 0.72);
+    --stroke: rgba(15, 23, 42, 0.08);
+    --text: #0f172a;
+    --muted: rgba(15, 23, 42, 0.6);
+    --primary: #4f7cff;
+    --primary-hover: #3b66e0;
+    --shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    font-size: 16px;
+
+    background:
+        radial-gradient(circle at 15% 10%, #e8efff 0%, transparent 40%),
+        radial-gradient(circle at 85% 30%, #f0f9ff 0%, transparent 45%),
+        var(--bg);
+
+    color: var(--text);
+}
+
+/* ===== LAYOUT ===== */
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 20px;
+}
+
+/* ===== CARD ===== */
+
+.card {
+    width: 100%;
+    max-width: 440px;
+
+    background: var(--card);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border: 1px solid var(--stroke);
+    border-radius: 20px;
+
+    padding: 32px;
+
+    box-shadow: var(--shadow);
+}
+
+/* ===== TITLE ===== */
+
+.title {
+    font-size: 26px;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+}
+
+/* ===== INPUTS ===== */
+
+.input,
+.textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+
+    border-radius: 12px;
+    border: 1px solid var(--stroke);
+
+    background: rgba(255, 255, 255, 0.65);
+    color: var(--text);
+
+    font-size: 18px;
+
+    outline: none;
+
+    transition: 0.2s ease;
+}
+
+.textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.input:focus,
+.textarea:focus {
+    border-color: rgba(79, 124, 255, 0.5);
+    box-shadow: 0 0 0 4px rgba(79, 124, 255, 0.12);
+}
+
+/* ===== FILE INPUT ===== */
+
+input[type="file"] {
+    width: 100%;
+    padding: 12px 14px;
+
+    border-radius: 12px;
+    border: 1px solid var(--stroke);
+
+    background: rgba(255, 255, 255, 0.65);
+    color: var(--text);
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+    margin-bottom: 12px;
+}
+
+input[type="file"]::file-selector-button {
+    margin-right: 12px;
+    padding: 8px 12px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: rgba(79, 124, 255, 0.12);
+    color: var(--primary);
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background: rgba(79, 124, 255, 0.2);
+}
+
+/* ===== BUTTON ===== */
+
+.button {
+    width: 100%;
+    padding: 12px 14px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: var(--primary);
+    color: white;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+.button:active {
+    transform: translateY(0px);
+}
+
+/* ===== ERROR ===== */
+
+#error {
+    margin-top: 10px;
+    color: #e11d48;
+    font-size: 13px;
+}
+
+/* ===== CONTENT ===== */
+
+.content {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+#text {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+#image {
+    width: 300px;
+    height: 300px;
+    border-radius: 18px;
+    border: 1px solid var(--stroke);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.04);
+}
+
+/* ===== HEADER ===== */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    justify-self: start;
+
+    width: 100%;
+
+    margin-bottom: 18px;
+}
+.header-btn {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 999px;
+
+    background: rgba(79, 124, 255, 0.12);
+    border: 1px solid rgba(79, 124, 255, 0.2);
+
+    color: var(--primary);
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.header-btn:hover {
+    background: rgba(79, 124, 255, 0.2);
+    transform: translateY(-1px) scale(1.05);
+}
+
+.header-btn:active {
+    transform: translateY(0px) scale(0.98);
+}
+
+/* SVG внутри */
+.header-btn img {
+    width: 24px;
+    height: 24px;
+
+    display: block;
+
+    filter: invert(0.2); /* если хочешь мягкий тёмный тон */
+}

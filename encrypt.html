@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Encrypt</title>
+    <link rel="icon" href="fav.ico" type="image/x-icon">
+
+    <link rel="stylesheet"href="styles/main.css">
+</head>
+
+<body>
+    <main class="page">
+        <section class="card">
+            <div class="header">
+                <h1 class="title">Зашифровать данные</h1>
+            
+                <a href="index.html" class="header-btn" title="На главную">
+                    <img src="src/arrow-left.svg" alt="back">
+                </a>
+            </div>
+
+            <input
+                id="login"
+                class="input"
+                placeholder="Логин"
+            >
+
+            <input
+                id="password"
+                class="input"
+                placeholder="Пароль"
+            >
+
+            <textarea
+                id="text"
+                class="textarea"
+                placeholder="Текст"
+            ></textarea>
+
+            <input
+                id="choosen-image"
+                class="input"
+                type="file"
+                accept="image/*"
+            >
+
+            <button id="submit"
+                class="button"
+                onclick="handleEncrypt()"
+            >
+                Generate .enc
+            </button>
+        </section>
+    </main>
+    
+    <script src="scripts/crypto-utils.js"></script>
+    <script src="scripts/encrypt.js"></script>
+</body>
+</html>
