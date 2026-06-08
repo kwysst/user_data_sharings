@@ -39,12 +39,10 @@ class EncryptionFile {
 
     constructor({
         login,
-        password,
         text,
         imageFile
     }) {
         this.login = login;
-        this.password = password;
         this.text = text;
         this.imageFile = imageFile;
     }
@@ -71,7 +69,7 @@ class EncryptionFile {
         const encrypted =
             await CryptoService.encrypt(
                 payload,
-                this.password
+                login
             );
 
         FileService.download(
@@ -93,23 +91,19 @@ async function handleEncrypt() {
     const login =
         document.getElementById('login').value;
 
-    const password =
-        document.getElementById('password').value;
-
     const text =
         document.getElementById('text').value;
 
     const imageFile =
         document.getElementById('choosen-image').files[0];
 
-    if (!login || !password || !imageFile) {
+    if (!login || !imageFile) {
         alert('Заполни всё');
         return;
     }
 
     await createEncryptedFile({
         login,
-        password,
         text,
         imageFile
     });

@@ -52,9 +52,6 @@ class App {
         const login =
             document.getElementById('login').value;
 
-        const password =
-            document.getElementById('password').value;
-
         UI.showError('');
 
         try {
@@ -70,7 +67,7 @@ class App {
             const payload =
                 await CryptoService.decrypt(
                     encrypted,
-                    password
+                    login
                 );
 
             UI.showContent(payload);
