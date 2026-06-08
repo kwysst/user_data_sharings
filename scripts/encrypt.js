@@ -69,7 +69,7 @@ class EncryptionFile {
         const encrypted =
             await CryptoService.encrypt(
                 payload,
-                login
+                normalizedLogin
             );
 
         FileService.download(
